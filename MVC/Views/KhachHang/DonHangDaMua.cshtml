@@ -1,0 +1,44 @@
+@model MVC.Models.KhachHang
+
+<h2>Đơn hàng của @Model.Ten</h2>
+
+@if (!Model.DonHangs.Any())
+{
+    <p>Khách hàng chưa có đơn hàng</p>
+}
+else
+{
+    @foreach (var dh in Model.DonHangs.OrderByDescending(d => d.NgayDat))
+    {
+        var tongTien = dh.ChiTietDonHangs.Sum(ct => ct.SoLuong * ct.SanPham.Gia);
+
+        <div class="card mb-3">
+            <div class="card-header">
+                Đơn hàng #@dh.DonHangId - @dh.NgayDat.ToString("dd/MM/yyyy")
+            </div>
+
+            <table class="table">
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+
+                @foreach (var ct in dh.ChiTietDonHangs)
+                {
+                    <tr>
+                        <td>@ct.SanPham.TenSanPham</td>
+                        <td>@ct.SanPham.Gia</td>
+                        <td>@ct.SoLuong</td>
+                        <td>@(ct.SoLuong * ct.SanPham.Gia)</td>
+                    </tr>
+                }
+            </table>
+
+            <h5 class="text-end text-danger">
+                Tổng tiền: @tongTien.ToString("N0") VNĐ
+            </h5>
+        </div>
+    }
+}

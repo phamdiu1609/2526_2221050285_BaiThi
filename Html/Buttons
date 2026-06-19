@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Phạm Thị Dịu - 2221050285</h1>
+
+<p>The button uses the <code>onclick</code> attribute to run JavaScript. When you click the button, it shows an alert message.</p>
+
+<button onclick="alert('Hello!')">Click Me</button>
+
+</body>
+</html>

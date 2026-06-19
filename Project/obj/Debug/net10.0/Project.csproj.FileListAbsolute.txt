@@ -1,0 +1,15 @@
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\bin\Debug\net10.0\Project.exe
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\bin\Debug\net10.0\Project.deps.json
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\bin\Debug\net10.0\Project.runtimeconfig.json
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\bin\Debug\net10.0\Project.dll
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\bin\Debug\net10.0\Project.pdb
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\Project.AssemblyInfoInputs.cache
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\Project.AssemblyInfo.cs
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\Project.csproj.CoreCompileInputs.cache
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\Project.sourcelink.json
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\Project.dll
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\refint\Project.dll
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\Project.pdb
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\Project.genruntimeconfig.cache
+C:\Users\Quang Nghi\Documents\Net_Core_API\Project\obj\Debug\net10.0\ref\Project.dll

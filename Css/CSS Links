@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a {
+  color: hotpink;
+  background-color: yellow;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>Phạm Thị Dịu</h1>
+
+<p><a href="default.asp" target="_blank">This is a link</a></p>
+
+</body>
+</html>
