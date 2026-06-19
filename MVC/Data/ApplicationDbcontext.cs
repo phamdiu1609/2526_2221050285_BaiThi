@@ -14,7 +14,17 @@ namespace MVC.Data
         public DbSet<SanPham> SanPhams { get; set; }
         public DbSet<DonHang> DonHangs { get; set; }
         public DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
+        public DbSet<NhaCungCap> NhaCungCaps { get; set; }
+        public DbSet<LoaiThietBi> LoaiThietBis { get; set; }
+        public DbSet<ThietBi> ThietBis { get; set; }
+
+        public DbSet<PhieuNhap> PhieuNhaps { get; set; }
+        public DbSet<ChiTietNhap> ChiTietNhaps { get; set; }
+
+        public DbSet<PhieuXuat> PhieuXuats { get; set; }
+        public DbSet<ChiTietXuat> ChiTietXuats { get; set; }
         public DbSet<Student> Students { get; set; } = default!;
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

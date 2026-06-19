@@ -15,7 +15,7 @@ namespace MVC.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.5");
+            modelBuilder.HasAnnotation("ProductVersion", "10.0.7");
 
             modelBuilder.Entity("MVC.Models.ChiTietDonHang", b =>
                 {
@@ -39,6 +39,63 @@ namespace MVC.Migrations
                     b.HasIndex("SanPhamId");
 
                     b.ToTable("ChiTietDonHangs");
+                });
+
+            modelBuilder.Entity("MVC.Models.ChiTietNhap", b =>
+                {
+                    b.Property<int>("ChiTietNhapId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("DonGiaNhap")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PhieuNhapId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("ThanhTien")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ThietBiId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ChiTietNhapId");
+
+                    b.HasIndex("PhieuNhapId");
+
+                    b.HasIndex("ThietBiId");
+
+                    b.ToTable("ChiTietNhaps");
+                });
+
+            modelBuilder.Entity("MVC.Models.ChiTietXuat", b =>
+                {
+                    b.Property<int>("ChiTietXuatId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("DonGiaXuat")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PhieuXuatId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ThietBiId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ChiTietXuatId");
+
+                    b.HasIndex("PhieuXuatId");
+
+                    b.HasIndex("ThietBiId");
+
+                    b.ToTable("ChiTietXuats");
                 });
 
             modelBuilder.Entity("MVC.Models.DonHang", b =>
@@ -78,6 +135,49 @@ namespace MVC.Migrations
                     b.ToTable("KhachHangs");
                 });
 
+            modelBuilder.Entity("MVC.Models.LoaiThietBi", b =>
+                {
+                    b.Property<int>("LoaiThietBiId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("MoTa")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TenLoai")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("LoaiThietBiId");
+
+                    b.ToTable("LoaiThietBis");
+                });
+
+            modelBuilder.Entity("MVC.Models.NhaCungCap", b =>
+                {
+                    b.Property<int>("NhaCungCapId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("DiaChi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SoDienThoai")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TenNhaCungCap")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("NhaCungCapId");
+
+                    b.ToTable("NhaCungCaps");
+                });
+
             modelBuilder.Entity("MVC.Models.Person", b =>
                 {
                     b.Property<string>("PersonId")
@@ -94,6 +194,45 @@ namespace MVC.Migrations
                     b.HasKey("PersonId");
 
                     b.ToTable("Persons");
+                });
+
+            modelBuilder.Entity("MVC.Models.PhieuNhap", b =>
+                {
+                    b.Property<int>("PhieuNhapId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("NgayNhap")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("NhaCungCapId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("TongTien")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PhieuNhapId");
+
+                    b.HasIndex("NhaCungCapId");
+
+                    b.ToTable("PhieuNhaps");
+                });
+
+            modelBuilder.Entity("MVC.Models.PhieuXuat", b =>
+                {
+                    b.Property<int>("PhieuXuatId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("NgayXuat")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("TongTien")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PhieuXuatId");
+
+                    b.ToTable("PhieuXuats");
                 });
 
             modelBuilder.Entity("MVC.Models.SanPham", b =>
@@ -137,6 +276,37 @@ namespace MVC.Migrations
                     b.ToTable("Student");
                 });
 
+            modelBuilder.Entity("MVC.Models.ThietBi", b =>
+                {
+                    b.Property<int>("ThietBiId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("GiaBan")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("LoaiThietBiId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("NhaCungCapId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SoLuongTon")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TenThietBi")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ThietBiId");
+
+                    b.HasIndex("LoaiThietBiId");
+
+                    b.HasIndex("NhaCungCapId");
+
+                    b.ToTable("ThietBis");
+                });
+
             modelBuilder.Entity("MVC.Models.ChiTietDonHang", b =>
                 {
                     b.HasOne("MVC.Models.DonHang", "DonHang")
@@ -156,6 +326,44 @@ namespace MVC.Migrations
                     b.Navigation("SanPham");
                 });
 
+            modelBuilder.Entity("MVC.Models.ChiTietNhap", b =>
+                {
+                    b.HasOne("MVC.Models.PhieuNhap", "PhieuNhap")
+                        .WithMany("ChiTietNhaps")
+                        .HasForeignKey("PhieuNhapId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MVC.Models.ThietBi", "ThietBi")
+                        .WithMany("ChiTietNhaps")
+                        .HasForeignKey("ThietBiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PhieuNhap");
+
+                    b.Navigation("ThietBi");
+                });
+
+            modelBuilder.Entity("MVC.Models.ChiTietXuat", b =>
+                {
+                    b.HasOne("MVC.Models.PhieuXuat", "PhieuXuat")
+                        .WithMany("ChiTietXuats")
+                        .HasForeignKey("PhieuXuatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MVC.Models.ThietBi", "ThietBi")
+                        .WithMany("ChiTietXuats")
+                        .HasForeignKey("ThietBiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PhieuXuat");
+
+                    b.Navigation("ThietBi");
+                });
+
             modelBuilder.Entity("MVC.Models.DonHang", b =>
                 {
                     b.HasOne("MVC.Models.KhachHang", "KhachHang")
@@ -165,6 +373,36 @@ namespace MVC.Migrations
                         .IsRequired();
 
                     b.Navigation("KhachHang");
+                });
+
+            modelBuilder.Entity("MVC.Models.PhieuNhap", b =>
+                {
+                    b.HasOne("MVC.Models.NhaCungCap", "NhaCungCap")
+                        .WithMany("PhieuNhaps")
+                        .HasForeignKey("NhaCungCapId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("NhaCungCap");
+                });
+
+            modelBuilder.Entity("MVC.Models.ThietBi", b =>
+                {
+                    b.HasOne("MVC.Models.LoaiThietBi", "LoaiThietBi")
+                        .WithMany("ThietBis")
+                        .HasForeignKey("LoaiThietBiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MVC.Models.NhaCungCap", "NhaCungCap")
+                        .WithMany("ThietBis")
+                        .HasForeignKey("NhaCungCapId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LoaiThietBi");
+
+                    b.Navigation("NhaCungCap");
                 });
 
             modelBuilder.Entity("MVC.Models.DonHang", b =>
@@ -177,9 +415,38 @@ namespace MVC.Migrations
                     b.Navigation("DonHangs");
                 });
 
+            modelBuilder.Entity("MVC.Models.LoaiThietBi", b =>
+                {
+                    b.Navigation("ThietBis");
+                });
+
+            modelBuilder.Entity("MVC.Models.NhaCungCap", b =>
+                {
+                    b.Navigation("PhieuNhaps");
+
+                    b.Navigation("ThietBis");
+                });
+
+            modelBuilder.Entity("MVC.Models.PhieuNhap", b =>
+                {
+                    b.Navigation("ChiTietNhaps");
+                });
+
+            modelBuilder.Entity("MVC.Models.PhieuXuat", b =>
+                {
+                    b.Navigation("ChiTietXuats");
+                });
+
             modelBuilder.Entity("MVC.Models.SanPham", b =>
                 {
                     b.Navigation("ChiTietDonHangs");
+                });
+
+            modelBuilder.Entity("MVC.Models.ThietBi", b =>
+                {
+                    b.Navigation("ChiTietNhaps");
+
+                    b.Navigation("ChiTietXuats");
                 });
 #pragma warning restore 612, 618
         }
