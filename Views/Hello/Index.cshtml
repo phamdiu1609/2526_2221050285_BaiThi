@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Hello";
+}
+
+<h2>Nhập họ tên</h2>
+
+<form method="post">
+    <input type="text" name="fullName" placeholder="Nhập họ tên" />
+    <button type="submit">Gửi</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p style="color: green;">@ViewBag.Message</p>
+}
