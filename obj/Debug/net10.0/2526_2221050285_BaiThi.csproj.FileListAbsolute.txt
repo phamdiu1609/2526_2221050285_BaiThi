@@ -369,3 +369,4 @@ C:\Users\Quang Nghi\Documents\2526_2221050285_BaiThi\obj\Debug\net10.0\refint\25
 C:\Users\Quang Nghi\Documents\2526_2221050285_BaiThi\obj\Debug\net10.0\2526_2221050285_BaiThi.pdb
 C:\Users\Quang Nghi\Documents\2526_2221050285_BaiThi\obj\Debug\net10.0\2526_2221050285_BaiThi.genruntimeconfig.cache
 C:\Users\Quang Nghi\Documents\2526_2221050285_BaiThi\obj\Debug\net10.0\ref\2526_2221050285_BaiThi.dll
+C:\Users\Quang Nghi\Documents\2526_2221050285_BaiThi\obj\Debug\net10.0\2526_2221050285_BaiThi.sourcelink.json
